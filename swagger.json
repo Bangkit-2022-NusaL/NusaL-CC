@@ -1,0 +1,142 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "NusaL API",
+      "description": "API for NusaL Apps user signup and login",
+      "contact": {
+        "name": "Ardhi Syahdila Putra",
+        "url": "https://github.com/ardhisputra7"
+        }
+    },
+    "host": "localhost:3000",
+    "servers": [
+        {
+          "url": "http://localhost:3000",
+          "description": "Development server"
+        }
+      ],
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "user",
+        "description": "API for users in NusaL"
+      }
+    ],
+    "schemes": ["http"],
+    "paths": {
+        "/user/signup": {
+          "post": {
+            "summary": "Create new user with name, email and password",
+            "tags": ["user"],
+            "parameters": [
+                {
+                  "name": "user",
+                  "in": "body",
+                  "description": "User that we want to create",
+                  "schema": {
+                    "required": ["name", "email", "password"],
+                    "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    }
+                    }
+                  }
+                }
+              ],
+            "produces": ["application/json"],
+            "responses": {
+              "201": {
+                "description": "User Created"
+              },
+              "409": {
+                "description": "Email Exist"
+              },
+              "500": {
+                "description": "Error message in JSON Format"
+              }
+            }
+          }
+        },
+        "/user/login": {
+            "post": {
+              "summary": "login with user email and password",
+              "tags": ["user"],
+              "parameters": [
+                  {
+                    "name": "user",
+                    "in": "body",
+                    "description": "login to this user",
+                    "schema": {
+                      "required": ["email", "password"],
+                      "properties": {
+                      "email": {
+                          "type": "string"
+                      },
+                      "password": {
+                          "type": "string"
+                      }
+                      }
+                    }
+                  }
+                ],
+              "produces": ["application/json"],
+              "responses": {
+                "200": {
+                  "description": "Auth Successful",
+                  "schema": {
+                    "required": ["message", "token"],
+                    "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "token": {
+                        "type": "string"
+                    }
+                    }
+                  }
+                },
+                "401": {
+                  "description": "Auth Failed"
+                },
+                "500": {
+                  "description": "Error message in JSON Format"
+                }
+              }
+            }
+        },
+        "/user/{userId}": {
+            "parameters": [{
+                "name": "userId",
+                "in": "path",
+                "required": true,
+                "description": "ID of user that we want to delete",
+                "type": "string"
+              },
+              { 
+                "name": "Authorization", 
+                "in": "header", 
+                "type": "string", 
+                "description": "Fill with 'Bearer token'" 
+            }],
+            "delete": {
+              "summary": "delete user with given ID",
+              "tags": ["user"],
+              "responses": {
+                "200": {
+                  "description": "User Deleted"
+                },
+                "500": {
+                    "description": "Error message in JSON Format"
+                }
+              }
+            }
+          }
+      }
+  }

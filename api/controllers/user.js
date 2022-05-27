@@ -26,7 +26,6 @@ exports.user_signup = async (req, res, next) => {
                             password: hash
                         });
                         const result = await user.save();
-                        console.log(result)
                         res.status(201).json({
                             message: 'User Created' 
                         })
@@ -68,7 +67,7 @@ exports.user_login = async (req, res, next) => {
                     expiresIn: "1h"
                 });
                 return res.status(200).json({
-                    message: 'Auth successful',
+                    message: 'Auth Successful',
                     token: token
                 });
             }
@@ -77,7 +76,6 @@ exports.user_login = async (req, res, next) => {
             });
         });
     } catch (error) {
-        console.log(error);
         res.status(500).json({
           error: error
         });
@@ -91,7 +89,6 @@ exports.user_delete = async (req, res, next) => {
             message: "User deleted"
           });
     } catch (error) {
-        console.log(error);
         res.status(500).json({
           error: error
         });

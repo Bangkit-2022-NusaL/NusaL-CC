@@ -1,16 +1,15 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-
-const productRoutes = require('./api/routes/products');
-const orderRoutes = require('./api/routes/orders');
+const swaggerUI = require('swagger-ui-express');
 const userRoutes = require('./api/routes/user');
 
 mongoose.connect('mongodb+srv://admin:'+ process.env.MONGO_PW +'@node-rest.ezacg.mongodb.net/?retryWrites=true&w=majority');
 
-app.use('/uploads', express.static('uploads'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+const swaggerDocs = require('./swagger.json');
 
 app.use((req, res, next) => {
     req.header('Access-Control-Allow-Origin', '*');
@@ -22,9 +21,8 @@ app.use((req, res, next) => {
     next();
 });
 
-//routes untuk handle request
-app.use('/products', productRoutes);
-app.use('/orders', orderRoutes);
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
+
 app.use('/user', userRoutes);
 
 app.use((req, res, next) => {
