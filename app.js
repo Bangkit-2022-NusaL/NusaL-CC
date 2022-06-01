@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const swaggerUI = require('swagger-ui-express');
 const userRoutes = require('./api/routes/user');
 
-mongoose.connect('mongodb+srv://admin:'+ process.env.MONGO_PW +'@node-rest.ezacg.mongodb.net/?retryWrites=true&w=majority');
+//mongoose.connect('mongodb+srv://admin:admin@node-rest.ezacg.mongodb.net/?retryWrites=true&w=majority'); for using atlas
+mongoose.connect('mongodb://nusalUser:'+ process.env.MONGO_PW +'@34.101.143.194:27017/nusal').then(res => console.log("Connected to DB")).catch(err => console.log(err));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());

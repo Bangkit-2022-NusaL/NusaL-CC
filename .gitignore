@@ -1,7 +1,1 @@
 node_modules/
-api/controllers/orders.js
-api/controllers/products.js
-api/models/order.js
-api/models/product.js
-api/routes/orders.js
-api/routes/products.js
