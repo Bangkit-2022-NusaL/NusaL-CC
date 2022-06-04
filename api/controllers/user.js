@@ -93,5 +93,4 @@ exports.user_delete = async (req, res, next) => {
           error: error
         });
     }
-    
 }

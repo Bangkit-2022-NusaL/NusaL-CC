@@ -14,6 +14,9 @@
         {
           "url": "http://localhost:3000",
           "description": "Development server"
+        },{
+          "url": "https://nusal-api-test.herokuapp.com/api-docs/",
+          "description": "Heroku server"
         }
       ],
     "basePath": "/",

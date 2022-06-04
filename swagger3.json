@@ -1,0 +1,501 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "NusaL API",
+    "description": "API for NusaL Apps user signup and login",
+    "contact": {
+      "name": "Ardhi Syahdila Putra",
+      "url": "https://github.com/ardhisputra7"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://nusal-352008.et.r.appspot.com/"
+    },
+    {
+      "url": "https://nusal-api-test.herokuapp.com/"
+    },{
+      "url": "http://localhost:3000/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "user",
+      "description": "API for users in NusaL"
+    },
+    {
+      "name": "password-reset",
+      "description": "API for user password reset in NusaL"
+    }
+  ],
+  "paths": {
+    "/user/signup": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Create new user with name, email and password",
+        "requestBody": {
+          "description": "User that we want to create",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "email",
+                  "name",
+                  "password"
+                ],
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "User Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Email Exist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error message in JSON Format",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "user"
+      }
+    },
+    "/user/login": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "login with user email and password",
+        "requestBody": {
+          "description": "login to this user",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "email",
+                  "password"
+                ],
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Auth Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Auth Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error message in JSON Format",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "user"
+      }
+    },
+    "/user/{userId}": {
+      "delete": {
+        "tags": [
+          "user"
+        ],
+        "summary": "delete user with given ID",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "ID of user that we want to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Fill with 'Bearer token'",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User Deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error message in JSON Format",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/password-reset": {
+      "post": {
+        "tags": [
+          "password-reset"
+        ],
+        "summary": "Requesting Password reset sent to email.",
+        "requestBody": {
+          "description": "User that we want to change the password",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "email",
+                  "password"
+                ],
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Reset email sent",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "need password",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Your new password is the same as your current password",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error message in JSON Format",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "user"
+      }
+    },
+    "/password-reset/{userId}/{token}/{password}": {
+      "get": {
+        "tags": [
+          "password-reset"
+        ],
+        "summary": "URL to confirm new password via email",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "ID of user that password want to change",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "path",
+            "description": "one time use token for confirmation",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "password",
+            "in": "path",
+            "description": "encrypted new password",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Render password change conformation page",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string",
+                  "example": "<html>HTML page</html>"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "password-reset"
+        ],
+        "summary": "URL to confirm new password via email",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "ID of user that password want to change",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "path",
+            "description": "one time use token for confirmation",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "password",
+            "in": "path",
+            "description": "encrypted new password",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Password changed successfully",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string",
+                  "example": "<html>HTML page</html>"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Token expired or invalid link",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string",
+                  "example": "<h1>Invalid link or expired</h1>"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error message in JSON Format",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "There are an server error",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string",
+                  "example": "<h1>An error occured</h1>"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {}
+}

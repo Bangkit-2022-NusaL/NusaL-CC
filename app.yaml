@@ -3,3 +3,4 @@ runtime: nodejs14
 env_variables:
   JWT_KEY: "secret"
   MONGO_PW: "nusalPassword"
+  EMAIL_PW: "uphjdkprbpvzffyg"

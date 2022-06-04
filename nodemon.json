@@ -1,6 +1,7 @@
 {
     "env": {
         "MONGO_PW": "nusalPassword",
-        "JWT_KEY": "secret"
+        "JWT_KEY": "secret",
+        "EMAIL_PW": "uphjdkprbpvzffyg"
     }
 }
