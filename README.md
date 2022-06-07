@@ -36,7 +36,7 @@ NusaL is an Android application supported with a REST API using the ExpressJs Fr
          2. For advanced configuration options, click **Show advanced configuration**
             <br>
             *Continue here~*
-            <br>
+            <br><br>
   * **Google App Engine (GAE)**
  
 * **Heroku: Cloud Application Platform**
