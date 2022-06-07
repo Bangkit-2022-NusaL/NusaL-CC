@@ -31,7 +31,8 @@ NusaL is an Android application supported with a REST API using the ExpressJs Fr
              > Since need it for general purposes only, E2 machines offers a good balance of price and performance, and are suitable for a wide variety of common workloads including databases.
            * In the **Boot disk** section, click **Change**, and then do the following:
              * On the Public images tab, choose the following:
-                * Operating System `Ubuntu`
+         
+         * Operating System `Ubuntu`
                 * OS version `18.04`
                 * Boot disk type `Balanced persistent disk`
                 * Boot disk size `10GB`
@@ -58,7 +59,15 @@ NusaL is an Android application supported with a REST API using the ExpressJs Fr
                > Port 27017 is the default port number for mongod and mongos instances
           <br>
   * **Google App Engine (GAE)**
- 
+    <br>
+    The Google App Engine (GAE) is a Platform-as-a-Service (PaaS) is a GCP service used to deploy the REST API that has been previously configured using the ExpressJs and many other dependencies. Unlike GCE or Kubernetes Engines, GAE offers the flexibility to focus on other concurrent web applications and processes without the need to configure the architecture of the instance. Using the previously created and deployed virtual machine `mongo-nusal`, we will use the **External IP Address** for GAE to access the MongoDB.
+    <br>
+    To deploy an application through GAE,
+    * Activate **Cloud Shell**
+    * Clone NusaL-CC git repository
+      ```
+      git clone https://github.com/Bangkit-2022-NusaL/NusaL-CC.git
+      ```
 * **Heroku: Cloud Application Platform**
 
 # Library
