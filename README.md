@@ -4,7 +4,7 @@ Bangkit 2022 Product-based Capstone Project - NusaL - CC
 This is Cloud Computing repository for NusaL application.
 
 # Introduction
-NusaL is an Android application supported with a REST API using the ExpressJs Framework for Node.js and MongoDB as the database. This API is then being deployed using Google App Engine (GAE) with its database (MongoDB) using a Virtual Machine from Google Compute Engine (GCE).
+NusaL is an Android application supported with a REST API using the ExpressJs Framework for Node.js and MongoDB as the database to store the user data. This API is then being deployed using Google App Engine (GAE) with its database (MongoDB) using a Virtual Machine from Google Compute Engine (GCE).
 
 # Deployment
 * **Google Cloud Platform (GCP)**
@@ -28,14 +28,17 @@ NusaL is an Android application supported with a REST API using the ExpressJs Fr
          <br>
          > Since need it for general purposes only, E2 machines offers a good balance of price and performance, and are suitable for a wide variety of common workloads including databases.
        * In the **Boot disk** section, click **Change**, and then do the following:
-         1. On the Public images tab, choose the following:
+         * On the Public images tab, choose the following:
             * Operating System `Ubuntu`
             * OS version `18.04`
             * Boot disk type `Balanced persistent disk`
             * Boot disk size `10GB`
-         2. For advanced configuration options, click **Show advanced configuration**
-            <br>
-            *Continue here~*
+       * Allow both `HTTP Traffic` and `HTTPS Traffic` Firewalls
+       * Click on the **Management, security, disks, sole tenancy** section, go to the **Networking** tab and do the following:
+         1. Add a new network tags `mongo`
+         2. On **Network Interfaces**, edit the `default` and make sure its external IP address is **Ephemeral** 
+       * Leave everything else as default
+       * Click **Create** instance
             <br><br>
   * **Google App Engine (GAE)**
  
