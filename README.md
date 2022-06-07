@@ -39,8 +39,8 @@ NusaL is an Android application supported with a REST API using the ExpressJs Fr
          2. On **Network Interfaces**, edit the `default` and make sure its external IP address is **Ephemeral** 
        * Leave everything else as default
        * Click **Create** instance
-         <br><br>
-      ###### After Creating the VM, we have to make another Firewall is response to the `mongo` network tag to enable a default port number for MongoDB instances.
+      <br><br>
+      After Creating the VM, we have to make another Firewall is response to the `mongo` network tag to enable a default port number for MongoDB instances.
       To create a new Firewall,
        * On GCP console, go to **Navigation Menu -> VPC Networks -> Firewall**
        * Click on **Create Firewall**
