@@ -14,7 +14,7 @@ NusaL is an Android application supported with a REST API using the ExpressJs Fr
    * Set a default region and zone `asia-southeast2-a`
    * Enable **Compute Engine** and **App Engine** APIs
     <br>
-  * **Google Compute Engine (GCE)** <br>
+   * **Google Compute Engine (GCE)** <br>
       Before deploying the application to cloud, we have to make sure that we have the database ready—where in this case we are using MongoDB. To achieve this, we are using GCE to initiate a Virtual Machine (VM) that will run on cloud. <br>
       To initiate a VM,
        * On GCP console, go to **Navigation Menu -> Compute Engine -> VM instances**
