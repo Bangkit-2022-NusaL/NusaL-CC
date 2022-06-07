@@ -7,10 +7,11 @@ This is Cloud Computing repository for NusaL application.
 NusaL is an Android application supported with a REST API using the ExpressJs Framework for Node.js and MongoDB as the database. This API is then being deployed using Google App Engine (GAE) with its database (MongoDB) using a Virtual Machine from Google Compute Engine (GCE).
 
 # Deployment
-* **Google Cloud Platform Deployment**
+* **Google Cloud Platform (GCP)**
+  * Google Compute Engine (GCE)
   * Google App Engine (GAE)
-
-## Heroku
+ 
+* **Heroku: Cloud Application Platform**
 
 # Library
 Libraries used for developing NusaL :
