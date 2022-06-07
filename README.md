@@ -77,8 +77,8 @@ NusaL is an Android application supported with a REST API using the ExpressJs Fr
     * Make sure that you have a `app.yaml` file using the `ls` command on **Cloud Shell**
     * Open the **Editor** through the Cloud Shell Window toolbar
     * Set the mongoose.connect in the `app.js` using the `mongo-nusal` instance **External IP Address**. For example:
-      ````
-      mongoose.connect('mongodb://nusalUser:'+ process.env.MONGO_PW +'@**EXTERNAL_IP_ADDRESS**:27017/nusal').then(res => console.log("Connected to DB")).catch(err => console.log(err));
+      ````Javascript
+      mongoose.connect('mongodb://nusalUser:'+ process.env.MONGO_PW +'@YOUR_EXTERNAL_IP_ADDRESS:27017/nusal').then(res => console.log("Connected to DB")).catch(err => console.log(err));
       ````
     * On the **Cloud Shell**, deploy GAE
       ````
