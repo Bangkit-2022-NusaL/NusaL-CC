@@ -45,7 +45,7 @@ NusaL is an Android application supported with a REST API using the ExpressJs Fr
      * **Create Firewall**
          <br>
          After Creating the VM, we have to make another Firewall is response to the `mongo` network tag to enable a default port number for MongoDB instances.
-         <br>
+         <br><br>
          To create a new Firewall,
           * On GCP console, go to **Navigation Menu -> VPC Networks -> Firewall**
           * Click on **Create Firewall**
@@ -56,7 +56,7 @@ NusaL is an Android application supported with a REST API using the ExpressJs Fr
             - Check `tcp`
             - Set the port number to be `27017`
                > Port 27017 is the default port number for mongod and mongos instances
-          <br><br>
+          <br>
   * **Google App Engine (GAE)**
  
 * **Heroku: Cloud Application Platform**
