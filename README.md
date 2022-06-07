@@ -8,7 +8,7 @@ NusaL is an Android application supported with a REST API using the ExpressJs Fr
 
 # Deployment
 * **Google Cloud Platform (GCP)**
-  * Google Compute Engine (GCE) --
+  * Google Compute Engine (GCE) :
 Before deploying the application to cloud, we have to make sure that we have the database ready—where in this case we are using MongoDB. 
   * Google App Engine (GAE)
  
