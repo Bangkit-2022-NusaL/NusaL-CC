@@ -28,7 +28,7 @@ NusaL is an Android application supported with a REST API using the ExpressJs Fr
            * Use the previously set region and zone `asia-southeast2-a`
            * Select Machine Configuration using series `E2` and machine type `e2-medium` 
              <br>
-             > Since need it for general purposes only, E2 machines offers a good balance of price and performance, and are suitable for a wide variety of common workloads including databases.
+             > Since its for general purposes only, E2 machines offers a good balance of price and performance, and are suitable for a wide variety of common workloads including databases.
            * In the **Boot disk** section, click **Change**, and then do the following:
              * On the Public images tab, choose the following:
          
@@ -76,9 +76,9 @@ NusaL is an Android application supported with a REST API using the ExpressJs Fr
       ````
     * Make sure that you have a `app.yaml` file using the `ls` command on **Cloud Shell**
     * Open the **Editor** through the Cloud Shell Window toolbar
-    * Set the mongoose.connect using the `mongo-nusal` instance **External IP Address**. For example:
+    * Set the mongoose.connect in the `app.js` using the `mongo-nusal` instance **External IP Address**. For example:
       ````
-      mongoose.connect('mongodb://nusalUser:'+ process.env.MONGO_PW +'@34.101.143.194:27017/nusal').then(res => console.log("Connected to DB")).catch(err => console.log(err));
+      mongoose.connect('mongodb://nusalUser:'+ process.env.MONGO_PW +'@**EXTERNAL_IP_ADDRESS**:27017/nusal').then(res => console.log("Connected to DB")).catch(err => console.log(err));
       ````
     * On the **Cloud Shell**, deploy GAE
       ````
