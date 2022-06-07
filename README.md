@@ -18,6 +18,7 @@ NusaL is an Android application supported with a REST API using the ExpressJs Fr
   * **Google Compute Engine (GCE)** 
       <br>
       * **Create Virtual Machine (VM)**
+          <br>
           Before deploying the application to cloud, we have to make sure that we have the database ready—where in this case we are using MongoDB. To achieve this, we are using GCE to initiate a Virtual Machine (VM) that will run on cloud. 
           <br><br>
           To initiate a VM,
@@ -42,19 +43,20 @@ NusaL is an Android application supported with a REST API using the ExpressJs Fr
            * Click **Create** instance
          <br><br>
      * **Create Firewall**
-      After Creating the VM, we have to make another Firewall is response to the `mongo` network tag to enable a default port number for MongoDB instances.
-      <br>
-      To create a new Firewall,
-       * On GCP console, go to **Navigation Menu -> VPC Networks -> Firewall**
-       * Click on **Create Firewall**
-       * Specify a Firewall name `default-mongo-port`
-       * Set target tags `mongo`
-       * Set source IP ranges `0.0.0.0/0`
-       * In the **Protocols and ports** section, Click on **Specified protocols and ports** and do the following:
-         - Check `tcp`
-         - Set the port number to be `27017`
-            > Port 27017 is the default port number for mongod and mongos instances
-       <br><br>
+         <br>
+         After Creating the VM, we have to make another Firewall is response to the `mongo` network tag to enable a default port number for MongoDB instances.
+         <br>
+         To create a new Firewall,
+          * On GCP console, go to **Navigation Menu -> VPC Networks -> Firewall**
+          * Click on **Create Firewall**
+          * Specify a Firewall name `default-mongo-port`
+          * Set target tags `mongo`
+          * Set source IP ranges `0.0.0.0/0`
+          * In the **Protocols and ports** section, Click on **Specified protocols and ports** and do the following:
+            - Check `tcp`
+            - Set the port number to be `27017`
+               > Port 27017 is the default port number for mongod and mongos instances
+          <br><br>
   * **Google App Engine (GAE)**
  
 * **Heroku: Cloud Application Platform**
