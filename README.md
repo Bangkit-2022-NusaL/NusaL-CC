@@ -17,7 +17,8 @@ NusaL is an Android application supported with a REST API using the ExpressJs Fr
       <br><br>
   * **Google Compute Engine (GCE)** 
       <br>
-      Before deploying the application to cloud, we have to make sure that we have the database ready—where in this case we are using MongoDB. To achieve this, we are using GCE to initiate a Virtual Machine (VM) that will run on cloud. <br>
+      Before deploying the application to cloud, we have to make sure that we have the database ready—where in this case we are using MongoDB. To achieve this, we are using GCE to initiate a Virtual Machine (VM) that will run on cloud. 
+      <br><br>
       To initiate a VM,
        * On GCP console, go to **Navigation Menu -> Compute Engine -> VM instances**
        * Click on **Create Instance**
