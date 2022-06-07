@@ -63,6 +63,8 @@ NusaL is an Android application supported with a REST API using the ExpressJs Fr
     The Google App Engine (GAE) is a Platform-as-a-Service (PaaS) is a GCP service used to deploy the REST API that has been previously configured using the ExpressJs and many other dependencies. Unlike GCE or Kubernetes Engines, GAE offers the flexibility to focus on other concurrent web applications and processes without the need to configure the architecture of the instance. Using the previously created and deployed virtual machine `mongo-nusal`, we will use the **External IP Address** for GAE to access the MongoDB.
     <br><br>
     To deploy an application through GAE,
+    * On GCP console, go to **Navigation Menu -> App Engine**
+    * Click **Create Application**
     * Activate **Cloud Shell**
     * Clone NusaL-CC git repository
       ````
@@ -73,7 +75,24 @@ NusaL is an Android application supported with a REST API using the ExpressJs Fr
       cd NusaL-CC
       ````
     * Make sure that you have a `app.yaml` file using the `ls` command on **Cloud Shell**
-    <br><br>
+    * Example app.yaml file
+      ````
+      runtime: nodejs14
+
+      env_variables:
+        JWT_KEY: "secret"
+        MONGO_PW: "database_password"
+        EMAIL_PW: "email_password"
+      ````
+     * Deploy app to App Engine
+       ```
+       gcloud app deploy
+       ```
+     * If any prompt shown press `Y` and click enter
+     * View Deployed App after successfully deployed
+       ```
+       gcloud app browse
+       ```
 
 # Library
 Libraries used for developing NusaL :
