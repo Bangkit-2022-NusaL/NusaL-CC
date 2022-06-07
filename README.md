@@ -31,8 +31,7 @@ NusaL is an Android application supported with a REST API using the ExpressJs Fr
              > Since need it for general purposes only, E2 machines offers a good balance of price and performance, and are suitable for a wide variety of common workloads including databases.
            * In the **Boot disk** section, click **Change**, and then do the following:
              * On the Public images tab, choose the following:
-         
-         * Operating System `Ubuntu`
+                * Operating System `Ubuntu`
                 * OS version `18.04`
                 * Boot disk type `Balanced persistent disk`
                 * Boot disk size `10GB`
