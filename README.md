@@ -11,7 +11,7 @@ NusaL is an Android application supported with a REST API using the ExpressJs Fr
   * **Prerequisites** <br>
     Here are several points to consider before proceeding:
     * Install or update to the latest version of the **Google Cloud CLI**
-    * Set a default region and zone (**asia-southeast2-a**)
+    * Set a default region and zone `asia-southeast2-a`
     * Enable **Compute Engine** and **App Engine** APIs
     <br>
   * **Google Compute Engine (GCE)** <br>
@@ -19,9 +19,9 @@ NusaL is an Android application supported with a REST API using the ExpressJs Fr
       To initiate a VM,
       1. On GCP console, go to **Navigation Menu -> Compute Engine -> VM instances**
       2. Click on **Create Instance**
-      3. Specify a VM name 'mongo-nusal'
-      4. Use the previously set region and zone 'asia-southeast2-a'
-      5. Select Machine Configuration using series 'E2' and machine type 'e2-medium', <br>
+      3. Specify a VM name `mongo-nusal`
+      4. Use the previously set region and zone `asia-southeast2-a`
+      5. Select Machine Configuration using series `E2` and machine type `e2-medium`, <br>
          > Since need it for general purposes only, E2 machines offers a good balance of price and performance, and are suitable for a wide variety of common workloads including databases.
          
     <br>
