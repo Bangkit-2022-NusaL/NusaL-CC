@@ -13,7 +13,7 @@ Deployment services used for developing NusaL :
 
 # Library
 Libraries used for developing NusaL :
-* ExpressJS
+* ExpressJs
 * Mongoose
 * bcrypt
 * Embedded JavaScript (EJS)
