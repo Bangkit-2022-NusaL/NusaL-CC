@@ -41,6 +41,12 @@ NusaL is an Android application supported with a REST API using the ExpressJs Fr
              2. On **Network Interfaces**, edit the `default` and make sure its external IP address is **Ephemeral** 
            * Leave everything else as default
            * Click **Create** instance
+           * Connect to Created VM via SSH
+           * Install MongoDB according this official guide
+             ```
+             https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
+             ```
+           * after MongoDB succesfully installed, change the configuration in `/etc/mongod.conf` especially about bind IP and security configuration for allowing access from internet
          <br><br>
      * **Create Firewall**
          <br>
