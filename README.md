@@ -4,7 +4,7 @@ Bangkit 2022 Product-based Capstone Project - NusaL - CC
 This is Cloud Computing repository for NusaL application.
 
 # Introduction
-NusaL is an Android application supported with a REST API using the ExpressJs Framework for Node.js and MongoDB as the database to **store the user data**. This API is then being deployed using Google App Engine (GAE) with its database (MongoDB) using a Virtual Machine from Google Compute Engine (GCE).
+NusaL is an Android application supported with a REST API using the ExpressJs Framework for Node.js and MongoDB as the database to **store the user data**. This API is then being deployed using Google App Engine (GAE) with its database (MongoDB) using a Virtual Machine from Google Compute Engine (GCE). Moreover, Cloud Storage service is used as a storage for multimedia images required by the android application that can be accessed using a direct access link to bucket location of the images.
 
 # Deployment
 * **Google Cloud Platform (GCP)**
